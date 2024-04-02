@@ -157,7 +157,7 @@ class GPT_Forward(LLM):
         response = None
         while response is None:
             try:
-                response = openai.Completion.create(
+                response = openai.chat.completions.create(
                     **config, prompt=prompt)
             except Exception as e:
                 if 'is greater than the maximum' in str(e):
@@ -180,7 +180,7 @@ class GPT_Forward(LLM):
         response = None
         while response is None:
             try:
-                response = openai.Completion.create(
+                response = openai.chat.completions.create(
                     **config, prompt=prompt)
             except Exception as e:
                 print(e)
@@ -209,7 +209,7 @@ class GPT_Forward(LLM):
         response = None
         while response is None:
             try:
-                response = openai.Completion.create(
+                response = openai.chat.completions.create(
                     **config, prompt=text)
             except Exception as e:
                 print(e)
@@ -316,7 +316,7 @@ class GPT_Insert(LLM):
         response = None
         while response is None:
             try:
-                response = openai.Completion.create(
+                response = openai.chat.completions.create(
                     **config, prompt=prefix, suffix=suffix)
             except Exception as e:
                 print(e)
